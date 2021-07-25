@@ -3610,7 +3610,6 @@ template<class I>
   constexpr T& @\exposid{emplace-deref}@(const I& i);    // \expos
 \end{itemdecl}
 
-\begin{itemdescr}
 % Indenting the \item markers is necessary to avoid check errors complaining
 % about missing pnum.
  \mandates
@@ -3638,7 +3637,6 @@ Any exception thrown by the initialization of the contained value.
 If an exception is thrown during the initialization of \tcode{T},
 \tcode{*this} does not contain a value, and
 the previous value (if any) has been destroyed.
-\end{itemdescr}
 \end{itemize}
 
 \pnum
