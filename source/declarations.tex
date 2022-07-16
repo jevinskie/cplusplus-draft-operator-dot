@@ -5475,6 +5475,8 @@ is an lvalue (but is not a
 bit-field), and
 ``\cvqual{cv1} \tcode{T1}'' is reference-compatible with
 ``\cvqual{cv2} \tcode{T2}'', or
+``\tcode{T2}'' is a reference surrogate type and overload resolution finds
+at least one viable dot access function with return type reference-related to ``\tcode{T1}'', or
 \item
 has a class type (i.e.,
 \tcode{T2}
@@ -5513,6 +5515,11 @@ const A& rca = b;               // \tcode{rca} refers to \tcode{A} subobject in 
 int& ir = B();                  // \tcode{ir} refers to the result of \tcode{B::operator int\&}
 \end{codeblock}
 \end{example}
+
+\item
+Otherwise,
+if ``\tcode{T2}'' is a reference surrogate type, then the best dot access function is selected through
+overload resolution as described in\iref{over.match.class.deduct} with ``\cvqual{cv1} \tcode{T1}'' as the target type.
 
 \item
 Otherwise,
